@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hello {{ prenom | upper }}</h1>
+
+        {% if temperature < 20 %}
+            <p class="alert-cold">Il fait froid aujourd'hui!</p>
+        {% endif %}
+        {% if temperature > 20 %}
+            <p class="alert-hot">Il fait chaud aujourd'hui!</p>
+        {% endif %}
+
+        {% if departement == 35 %}
+            <p>Vous êtes dans le département 35.</p>
+        {% endif %}
+
+        <ul>
+            {% for pays in pays %}
+                <li>{{ pays | country_name | upper }}</li>
+            {% endfor %}
+        </ul>
+        <p>Le bien est situé à {{ bien.ville }}</p>
+    </div>
+
+</body>
+</html>

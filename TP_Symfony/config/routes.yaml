@@ -1,0 +1,20 @@
+index:
+  path: /route
+  controller: App\Controller\TestController::index
+
+test:
+  path: /test/{department}
+  controller: App\Controller\TestController::test
+  defaults:
+    department: 0
+hello2:
+  path: /hello2/{prenom}
+  controller: 'App\Controller\HelloController2::index'
+
+hello:
+  path: /hello/{prenom}
+  controller: 'App\Controller\HelloController::hello'
+
+Home:
+  path : /Home
+  controller : App\Controller\AccueilController::accueil

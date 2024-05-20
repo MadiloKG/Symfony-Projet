@@ -1,0 +1,41 @@
+services:
+    # Configuration par défaut pour les services dans ce fichier
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        
+    Cocur\Slugify\Slugify:
+        public: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+        public: true
+        arguments:
+            $logger: '@Psr\Log\LoggerInterface'
+
+    App\Frais\Calculatrice:
+        arguments:
+            $taux: 10
+
+    App\Controller\HelloController:
+        autowire: true
+
+    App\Controller\HelloController2:
+        autowire: true
+
+    App\Controller\HomeController: 
+        autowire: true
+
+    App\Repository\BienRepository:
+        autowire: true
+    
+    App\Controller\AccueilController: 
+        autowire: true
+
+    App\Repository\CategorieRepository:
+        autowire: true

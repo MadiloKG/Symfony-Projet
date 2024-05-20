@@ -1,0 +1,7 @@
+{% block body %}
+    <h2>Nos biens à la vente</h2>
+    {% set bien = bien1 %}
+    {% include "_bien.html.twig" %}
+    {% set bien = bien2 %}
+    {% include "_bien.html.twig" %}
+{% endblock %}

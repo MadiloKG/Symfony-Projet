@@ -1,0 +1,59 @@
+{# templates/home.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accueil Agence Alpha</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+        <h1>Accueil</h1>
+        <i class="fas fa-check"></i>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <img src="https://wallpapercave.com/wp/wp11802054.jpg" class="img-fluid" alt="" />
+                    <div class="card-body">
+                        <h4 class="card-title">Magnifique maison</h4>
+                        <p class="card-text">Description du bien</p>
+                        <a href="#" class="btn btn-primary btn-sn">Détails</a>
+                        <a href="#" class="btn btn-success btn-sn">Ajouter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h2>Votre agence de proximité</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="row">
+            {% include 'shared/_presentation.html.twig' with {
+                'bgColor': 'primary',
+                'icon': 'fa-search',
+                'text': 'Recherche'
+            } %}
+            {% include 'shared/_presentation.html.twig' with {
+                'bgColor': 'success',
+                'icon': 'fa-thumbs-up',
+                'text': 'Satisfaction'
+            } %}
+            {% include 'shared/_presentation.html.twig' with {
+                'bgColor': 'info',
+                'icon': 'fa-info-circle',
+                'text': 'Informations'
+            } %}
+        </div>
+        
+        <!-- Affichage du message et des données du bien -->
+        {% if bienPersiste %}
+            <p>Le bien existe dans la base de données.</p>
+        {% else %}
+            <p>Le bien n'existe pas dans la base de données.</p>
+        {% endif %}
+        <!-- Fin de l'affichage du message et des données du bien -->
+    </div>
+</body>
+</html>
